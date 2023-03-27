@@ -1,6 +1,22 @@
-composer require laravel/jetstream
-php artisan jetstream:install livewire
-npm install
-npm run dev
-changes in usertable
-php artisan migrate
+1. composer require laravel/jetstream
+2. php artisan jetstream:install livewire
+3. npm install
+4. npm run dev
+5. changes in usertable/ in database migration user table
+6. php artisan migrate
+7. after updating user table in database make changes in 
+views/auth/register.blade.php file added phone and address as per database table
+8. go to app/Models/user.php file and add phone and address after email.
+9. now go to app/action/fortify/CreateNewUser.php and copy "'email' => $input['email']," line
+and paste twice after the line copied and edit as fallows
+'phone' => $input['phone'], 
+Understanting Note:::::here 1st phone is database call and the phone after input is input phone 
+which we added to register.blade.php and same for address line as below.
+'address' => $input['address'],
+10.Now go and register user and check login logout function
+################### ---Admin Registration---#####################
+11.Register a user like a normal user name it admin and password you want then go to database 
+edit the usertype from zero to 1
+12. for admin we have adifferent dashbord so go to the app/providers/RouteServiceProvider.php
+change "public const HOME = '/dashboard';" to "public const HOME = '/redirect';"
+13. now go to routes/web.php and create a route for "redirect" here
