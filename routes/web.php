@@ -24,8 +24,10 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');
+    })->name('dashboard');   
 
-    
+
 });
-Route::get('/redirect',[HomeController::class,redirect]);
+
+
+Route::get('/redirect',[HomeController::class,'redirect']);
