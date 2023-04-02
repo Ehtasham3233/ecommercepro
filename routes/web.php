@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\HTTP\Controllers\HomeController;
+use App\HTTP\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
