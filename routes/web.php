@@ -29,3 +29,5 @@ Route::middleware([
 
 
 Route::get('/redirect',[HomeController::class,'redirect']);
+
+Route::get('/view_catagory',[AdminController::class,'view_catagory']);
